@@ -304,6 +304,7 @@ de_formal:
       recent_notifications: "Letzte Benachrichtigungen"
       settings: "Einstellungen"
       view_all: "Alle anzeigen"
+      imprint: "Impressum"
   likes:
     likes:
       people_dislike_this:
