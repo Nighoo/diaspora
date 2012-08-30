@@ -215,12 +215,18 @@ Diaspora::Application.routes.draw do
   end
 
   get 'community_spotlight' => "contacts#spotlight", :as => 'community_spotlight'
-  # Mobile site
 
+  # Mobile site
   get 'mobile/toggle', :to => 'home#toggle_mobile', :as => 'toggle_mobile'
 
-  #Protocol Url
+  # Protocol Url
   get 'protocol' => redirect("https://github.com/diaspora/diaspora/wiki/Diaspora%27s-federation-protocol")
+
+  # Impress
+  get 'impress', :to => 'home#impress', :as => 'impress'
+
+  # Privacy Info
+  get 'privacy_policy', :to => 'home#privacy_policy', :as => 'privacy_policy'
 
   # Resque web
   if AppConfig[:mount_resque_web]

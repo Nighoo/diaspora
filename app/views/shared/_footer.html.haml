@@ -1,7 +1,8 @@
 %footer
   .container
     %ul#footer_nav
-      %li= link_to t('layouts.header.imprint'), "/Imprint"
+      %li= link_to t('layouts.header.imprint'), impress_path
+      %li= link_to t('privacy_policy'), privacy_policy_path
       %li.separator= "|"
       %li= link_to(t('layouts.header.code'), "https://github.com/Nighoo/diaspora", {:title => t('layouts.application.source_package')})
       %li= link_to(t('layouts.application.toggle'), toggle_mobile_path)
