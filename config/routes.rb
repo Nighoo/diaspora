@@ -222,11 +222,8 @@ Diaspora::Application.routes.draw do
   # Protocol Url
   get 'protocol' => redirect("https://github.com/diaspora/diaspora/wiki/Diaspora%27s-federation-protocol")
 
-  # Impress
-  get 'impress', :to => 'home#impress', :as => 'impress'
-
-  # Privacy Info
-  get 'privacy_policy', :to => 'home#privacy_policy', :as => 'privacy_policy'
+  # Legal
+  get 'legal', :to => 'home#legal', :as => 'legal'
 
   # Resque web
   if AppConfig[:mount_resque_web]

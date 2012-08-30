@@ -399,7 +399,7 @@ en:
       admin: "admin"
       view_all: "View all"
       recent_notifications: "Recent notifications"
-      imprint: "Imprint"
+      legal: "Imprint, ToS and Privacy"
     application:
       powered_by: "POWERED BY DIASPORA*"
       whats_new: "what's new?"
