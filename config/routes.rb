@@ -28,8 +28,6 @@ Diaspora::Application.routes.draw do
     resources :comments, :only => [:new, :create, :destroy, :index]
   end
 
-  match "/framer" => redirect("/posts/new")
-
   get 'p/:id' => 'posts#show', :as => 'short_post'
   get 'posts/:id/iframe' => 'posts#iframe', :as => 'iframe'
 
@@ -181,13 +179,6 @@ Diaspora::Application.routes.draw do
 
   # External
 
-  resources :authorizations, :only => [:index, :destroy]
-  scope "/oauth", :controller => :authorizations, :as => "oauth" do
-    get "authorize" => :new
-    post "authorize" => :create
-    post :token
-  end
-
   resources :services, :only => [:index, :destroy]
   controller :services do
     scope "/auth", :as => "auth" do
@@ -223,7 +214,7 @@ Diaspora::Application.routes.draw do
   get 'legal', :to => 'home#legal', :as => 'legal'
 
   # Resque web
-  if AppConfig[:mount_resque_web]
+  if AppConfig.admins.inline_resque_web?
     mount Resque::Server.new, :at => '/resque-jobs', :as => "resque_web"
   end
 
