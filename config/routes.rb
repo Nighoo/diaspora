@@ -209,8 +209,8 @@ Diaspora::Application.routes.draw do
   # Mobile site
   get 'mobile/toggle', :to => 'home#toggle_mobile', :as => 'toggle_mobile'
 
-  # Protocol Url
-  get 'protocol' => redirect("https://github.com/diaspora/diaspora/wiki/Diaspora%27s-federation-protocol")
+  #Protocol Url
+  get 'protocol' => redirect("http://wiki.diasporafoundation.org/Federation_Protocol_Overview")
 
   # Legal
   get 'legal', :to => 'home#legal', :as => 'legal'
