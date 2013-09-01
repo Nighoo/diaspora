@@ -1,5 +1,3 @@
-%a{:href => "http://flattr.com/thing/1259488/Diaspora-Pod-socializer-cc", :target => "_blank"}
-  %img{:alt => "Flattr this", :border => "0", :src => "http://api.flattr.com/button/flattr-badge-large.png", :title => "Flattr this"}/
 - if AppConfig.settings.paypal_hosted_button_id.present?
   PayPal:
   %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post"}
@@ -14,6 +12,10 @@
     %input{:name => "currency_code", :type => "hidden", :value => "USD"}
     %input{:name => "submit", :type => "submit", :value => t('aspects.index.donate')}
 - if AppConfig.settings.bitcoin_wallet_id.present?
+  %br
   Bitcoin:
   %input{:type => "text", :id => "bitcoin_address", :value => AppConfig.settings.bitcoin_wallet_id, :readonly => true}
-  
+%br
+%a{:href => "http://flattr.com/thing/1259488/Diaspora-Pod-socializer-cc", :target => "_blank"}
+  %img{:alt => "Flattr this", :border => "0", :src => "http://api.flattr.com/button/flattr-badge-large.png", :title => "Flattr this"}/
+
