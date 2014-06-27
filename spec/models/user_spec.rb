@@ -48,48 +48,48 @@ describe User do
   end
 
   describe 'yearly_actives' do
-    it 'returns list which includes users who latest signed in within last year' do
+    it 'returns list which includes users within last year' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 1.month
+      user.last_seen = Time.now - 1.month
       user.save
       User.yearly_actives.should include user
     end
 
-    it 'returns list which does not include users who did not sign in within last year' do
+    it 'returns list which does not include users seen within last year' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 2.year
+      user.last_seen = Time.now - 2.year
       user.save
       User.yearly_actives.should_not include user
     end
   end
 
   describe 'monthly_actives' do
-    it 'returns list which includes users who latest signed in within last month' do
+    it 'returns list which includes users seen within last month' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 1.day
+      user.last_seen = Time.now - 1.day
       user.save
       User.monthly_actives.should include user
     end
 
-     it 'returns list which does not include users who did not sign in within last month' do
+     it 'returns list which does not include users seen within last month' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 2.month
+      user.last_seen = Time.now - 2.month
       user.save
       User.monthly_actives.should_not include user
     end
   end
 
   describe 'daily_actives' do
-    it 'returns list which includes users who latest signed in within last day' do
+    it 'returns list which includes users seen within last day' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 1.hour
+      user.last_seen = Time.now - 1.hour
       user.save
       User.daily_actives.should include(user)
     end
 
-    it 'returns list which does not include users who did not sign in within last day' do
+    it 'returns list which does not include users seen within last day' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 2.day
+      user.last_seen = Time.now - 2.day
       user.save
       User.daily_actives.should_not include(user)
     end
@@ -112,16 +112,16 @@ describe User do
   end
 
   describe 'halfyear_actives' do
-    it 'returns list which includes users who latest signed in within half a year' do
+    it 'returns list which includes users seen within half a year' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 4.month
+      user.last_seen = Time.now - 4.month
       user.save
       User.halfyear_actives.should include user
     end
 
-     it 'returns list which does not include users who did not sign in within the last half a year' do
+     it 'returns list which does not include users seen within the last half a year' do
       user = FactoryGirl.build(:user)
-      user.last_sign_in_at = Time.now - 7.month
+      user.last_seen = Time.now - 7.month
       user.save
       User.halfyear_actives.should_not include user
     end
@@ -332,7 +332,7 @@ describe User do
         alice.should_not be_valid
       end
 
-      it "requires a vaild email address" do
+      it "requires a valid email address" do
         alice.email = "somebody@anywhere"
         alice.should_not be_valid
       end
@@ -352,7 +352,7 @@ describe User do
         alice.should be_valid
       end
 
-      it "requires a vaild unconfirmed_email address" do
+      it "requires a valid unconfirmed_email address" do
         alice.unconfirmed_email = "somebody@anywhere"
         alice.should_not be_valid
       end
@@ -1016,6 +1016,7 @@ describe User do
           auto_follow_back_aspect_id
           unconfirmed_email
           confirm_email_token
+          last_seen
         }.sort
       end
     end
