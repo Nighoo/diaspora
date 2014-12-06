@@ -42,8 +42,8 @@
 
       %p
         If you access or use the Service, it means you agree to be bound by all of the terms below. So, before you use the Service, please read all of the terms. If you don't agree to all of the terms below, please do not use the Service.
-        - if AppConfig.admins.podmin_email?
-          Also, if a term does not make sense to you, please let us know by e-mailing <a href="mailto:#{AppConfig.admins.podmin_email}">#{AppConfig.admins.podmin_email}</a>.
+        -# if AppConfig.admins.podmin_email?
+        -#  Also, if a term does not make sense to you, please let us know by e-mailing <a href="mailto:#{AppConfig.admins.podmin_email}">#{AppConfig.admins.podmin_email}</a>.
           
       %h2
         Changes to these Terms
@@ -196,12 +196,12 @@
       %p
         We love feedback. Please let us know what you think of the Service, these Terms and, in general, <strong>#{AppConfig.settings.pod_name}</strong>. When you provide us with any feedback, comments or suggestions about the Service, these Terms and, in general, <strong>#{AppConfig.settings.pod_name}</strong>, you irrevocably assign to us all of your right, title and interest in and to your feedback, comments and suggestions.
 
-      - if AppConfig.admins.podmin_email?
-        %h2
-          Questions & Contact Information
+      -#- if AppConfig.admins.podmin_email?
+      -#  %h2
+      -#    Questions & Contact Information
 
-        %p
-          Questions or comments about the Service may be directed to us at the email address <a href="mailto:#{AppConfig.admins.podmin_email}">#{AppConfig.admins.podmin_email}</a>.
+      -#  %p
+      -#    Questions or comments about the Service may be directed to us at the email address <a href="mailto:#{AppConfig.admins.podmin_email}">#{AppConfig.admins.podmin_email}</a>.
       %a{:name => "privacy"}
 
       %hr
@@ -309,10 +309,10 @@
       %p
         Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our services.
 
-      - if AppConfig.admins.podmin_email?
-        %h2
-          Contact Us
+      -#- if AppConfig.admins.podmin_email?
+      -#  %h2
+      -#    Contact Us
 
-        %p
-          If you have any questions about this privacy policy, please contact us at the email address <a href="mailto:#{AppConfig.admins.podmin_email}">#{AppConfig.admins.podmin_email}</a>.
+      -#  %p
+      -#    If you have any questions about this privacy policy, please contact us at the email address <a href="mailto:#{AppConfig.admins.podmin_email}">#{AppConfig.admins.podmin_email}</a>.
 
