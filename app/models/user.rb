@@ -458,9 +458,6 @@ class User < ActiveRecord::Base
       default_account = Webfinger.new(AppConfig.settings.autofollow_on_join_user).fetch
       self.share_with(default_account, aq) if default_account
     end
-    ###### auto follow socializer official account ######
-    socializer_account = Webfinger.new('socializer@socializer.cc').fetch
-    self.share_with(socializer_account, aq) if socializer_account
     aq
   end
 
