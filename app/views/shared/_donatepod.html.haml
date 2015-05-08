@@ -9,16 +9,10 @@
     %input{name: "currency_code", type: "hidden", value: AppConfig.settings.paypal_donations.currency}
     %input{name: "submit", type: "submit", value: t("aspects.index.donate"), class: "btn btn-default"}
 
-%input{:type => "text", :id => "bitcoin_address", :value => AppConfig.bitcoin_donation_address, :readonly => true}
-%br
 %a{:href => "http://flattr.com/thing/1259488/Diaspora-Pod-socializer-cc", :target => "_blank"}
-%img{:alt => "Flattr this", :border => "0", :src => "http://api.flattr.com/button/flattr-badge-large.png", :title => "Flattr this"}/
+  %img{:alt => "Flattr this", :border => "0", :src => "http://api.flattr.com/button/flattr-badge-large.png", :title => "Flattr this"}/
 
 - if AppConfig.bitcoin_donation_address
   %br
   Bitcoin:
   %input{type: "text", id: "bitcoin_address", value: AppConfig.bitcoin_donation_address, readonly: true}
-
-
-
-
