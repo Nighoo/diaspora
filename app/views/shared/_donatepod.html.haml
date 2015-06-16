@@ -9,8 +9,8 @@
     %input{name: "currency_code", type: "hidden", value: AppConfig.settings.paypal_donations.currency}
     %input{name: "submit", type: "submit", value: t("aspects.index.donate"), class: "btn btn-default"}
 
-%a{:href => "http://flattr.com/thing/1259488/Diaspora-Pod-socializer-cc", :target => "_blank"}
-  %img{:alt => "Flattr this", :border => "0", :src => "http://api.flattr.com/button/flattr-badge-large.png", :title => "Flattr this"}/
+%a{:href => "https://flattr.com/thing/1259488/Diaspora-Pod-socializer-cc", :target => "_blank"}
+  %img{:alt => "Flattr this", :border => "0", :src => "https://api.flattr.com/button/flattr-badge-large.png", :title => "Flattr this"}/
 
 - if AppConfig.bitcoin_donation_address
   %br
