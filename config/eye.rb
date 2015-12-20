@@ -20,6 +20,8 @@ Eye.application("diaspora") do
 
     monitor_children do
       stop_command "kill -QUIT {PID}"
+      check :cpu, below: 40, times: [3, 5]
+      check :memory, every: 30.seconds, below: 500.megabytes, times: 3
     end
   end
 
@@ -33,6 +35,7 @@ Eye.application("diaspora") do
           daemonize true
           pid_file "tmp/pids/sidekiq#{i}.pid"
           stop_signals [:USR1, 0, :TERM, 10.seconds, :KILL]
+          check :memory, every: 30.seconds, below: 500.megabytes, times: 3
         end
       end
     end
